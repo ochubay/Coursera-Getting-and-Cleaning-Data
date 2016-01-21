@@ -20,4 +20,4 @@ This repo contains the files (scripts and tidy dataset) for the final project as
 3. Please refer to the codebook.md located in this repo for more details.
 
 ### codebook.md
-* This file describes the variables, the data, and any transformations or work performed to clean up the data
+* This file describes input data set and data transformation work performed by the run_analysis.R script to clean up the data
