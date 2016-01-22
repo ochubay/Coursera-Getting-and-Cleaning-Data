@@ -18,7 +18,7 @@ The scope of this code book covers tidy data preparation implemented in run_anal
   * 'test/X_test.txt': Test set.
   * 'test/y_test.txt': Test labels.
   * 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-3. There are 33 basic primary variables (8 per each of 3D axis and 9 axis-agnostic) and 17 statistics computed per most variables. Additinally there are 5 angle() variable statistics computed.
+3. There are 33 basic primary variables (8 per each of 3D axis and 9 axis-agnostic) and 17 statistics computed per most of the variables. Additinally there are 5 angle() variable statistics computed.
 4. These 8 primary variables (8*3 => 24 columns in the dataset since each variable is tripledmeasured in X, Y, Z axis projections) are:
   * tBodyAcc-XYZ
   * tGravityAcc-XYZ
@@ -58,11 +58,11 @@ The scope of this code book covers tidy data preparation implemented in run_anal
   * angle(): Angle between to vectors.
 
 #### **Preparing Tidy Data**
-The run_analysis.R script contains run_analysis() function which performs the following data processing:
+run_analysis.R script contains run_analysis() function which performs the following data processing:
 ###
-1. reads all input "train" and "test" datasets (X_test,X_train, y_test, y_train, subj_test, subj_train) and dictionaries into their respective data frames
-2. assigns descriptive names to the dataframes based on names located in *feature* dataframe which was loaded formfeature.txt having eliminated '(' and ')' symbols from original names
-3. merges train and test datasets into a consolidated datasets X, y, subj respectively
+1. reads all input datasets from "train" and "test" subdirectories (X_test, X_train, y_test, y_train, subj_test, subj_train) and dictionaries into their respective data frames
+2. assigns descriptive names to the dataframes based on names located in *feature* dataframe which was loaded from feature.txt having eliminated '(' and ')' symbols from original names
+3. merges train and test datasets into a consolidated datasets X, y, subj containing train and test data respectively 
 4. removes all columns from the X dataframe which are not  'mean' or 'std' columns
 5. combines all datasets X, y, subj together into a single dataframe *tidydataset*
 6. creates summary dataset *df_summary* with means for each variable by subject and activity
